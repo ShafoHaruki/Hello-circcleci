@@ -3,6 +3,13 @@ jobs:
   test:
     docker:
       - image: buildpack-deps:trusty
+    steps:
       - run:
           name: "say hello world"
           command: "echo Hello world"
+workflows:
+  version: 2
+  runTest: 
+    jobs:
+      - test
+
